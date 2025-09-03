@@ -42,5 +42,13 @@ Creati **5** oggetti in memoria
 1. ### Spread Operator (...)
     L'oggetto contiene a sua volta diversi oggetti annidati, ognuna con una funzione al suo interno, di conseguenza non si può copiare "in profondità". Dato che lo Spread Operator fa una copia superficiale di primo livello, e quindi non fa una copia effettiva degli oggetti, bisogna usare lo Spread Operator per ogni oggetto presente:
     ```
-    const copyChef = {...chef, ...chef.restaurant, ...chef.restaurant.address}
+    const copyChef = {
+        ...chef, 
+        restaurant: {
+            ...chef.restaurant, 
+            address: {
+                ...chef.restaurant.address
+                }
+            }
+        }
     ```
